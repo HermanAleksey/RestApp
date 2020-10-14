@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<!--<head>-->
+<!--    <meta charset="UTF-8"/>-->
+<!--    <title>Title</title>-->
+<!--</head>-->
 <body>
-    <b>Default page</b>
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Input message"/>
+        <input type="text" name="tag" placeholder="Input tag"/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div>Messages list</div>
+<form method="post" action="filter">
+    <input type="text" name="filter"/>
+    <button type="submit">Search</button>
+</form>
+{{#messages}}
+<div>
+    <b>{{id}}</b>
+    <span>{{text}}</span>
+    <i>{{tag}}</i>
+</div>
+{{/messages}}
+
 </body>
 </html>
+
+
+<!-- guides:  https://www.youtube.com/redirect?q=http%3A%2F%2Fmustache.github.io%2Fmustache.5.html&redir_token=QUFFLUhqbmc2V19PRVptTWd4a195WDNoVmMxT2hhV0hZQXxBQ3Jtc0ttblBFVWZpNFBmYURGLTNwQm4zeGpJYWhwUXYwem0td1B2YTduYzFjZldSMHN2dGpLSjQxbmRUV1BWWWE4dTRob0tHUTZhM2VEcXlTaTZ6dVVCRmJlRWZLMnRLT3dSSjg1ZmdqZnJtc2tWVlp1UEstaw%3D%3D&v=nyFLX3q3poY&event=video_description-->
