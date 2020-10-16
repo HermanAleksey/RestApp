@@ -14,4 +14,6 @@ public interface DriverRepository  extends CrudRepository<Driver, Long> {
     List<Driver> findDriverByPhoneNumber (String phoneNumber);
 
     List<Driver> findDriverById(int id);
+
+    void deleteDriverById(int id);
 }

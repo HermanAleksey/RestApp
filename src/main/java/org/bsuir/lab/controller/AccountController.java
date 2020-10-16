@@ -34,12 +34,13 @@ public class AccountController {
         return "account";
     }
 
-//    TODO("Make this field accepting only ints");
     @PostMapping("/account/selectById")
     public String selectById(
             @RequestParam int id,
             Map<String, Object> model) {
-
+//        if (idString.isEmpty()) return "account";
+        System.out.println("-------------------------"+id);
+//        int id = Integer.parseInt(idString);
         Iterable<Account> accounts = accountRepository.findAccountById(id);
         model.put("accounts", accounts);
 
@@ -50,8 +51,11 @@ public class AccountController {
     public String selectByLogin(
             @RequestParam String login,
             Map<String, Object> model) {
+        Iterable<Account> accounts = accountRepository.findByLogin(login);
+        model.put("accounts", accounts);
+
         if (login.isEmpty()) {
-            Iterable<Account> accounts = accountRepository.findByLogin(login);
+            accounts = accountRepository.findAll();
             model.put("accounts", accounts);
         }
 
@@ -62,8 +66,11 @@ public class AccountController {
     public String selectByPassword(
             @RequestParam String password,
             Map<String, Object> model) {
+        Iterable<Account> accounts = accountRepository.findByPassword(password);
+        model.put("accounts", accounts);
+
         if (password.isEmpty()) {
-            Iterable<Account> accounts = accountRepository.findByPassword(password);
+            accounts = accountRepository.findAll();
             model.put("accounts", accounts);
         }
 
@@ -100,12 +107,12 @@ public class AccountController {
         return "account";
     }
 
-//    @PostMapping("/account/delete")
-//    public String delete(
-//            @RequestParam int id,
-//            Map<String, Object> model) {
-//        accountRepository.deleteAccountById(id);
-//        return "account";
-//    }
+    @PostMapping("/account/delete")
+    public String delete(
+            @RequestParam int id,
+            Map<String, Object> model) {
+        accountRepository.deleteAccountById(id);
+        return "account";
+    }
 
 }
