@@ -21,6 +21,12 @@ public class Driver {
         this.phoneNumber = phoneNumber;
     }
 
+    public Driver(int id, String fio, String phoneNumber) {
+        this.id = id;
+        this.fio = fio;
+        this.phoneNumber = phoneNumber;
+    }
+
     public int getId() {
         return id;
     }

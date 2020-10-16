@@ -38,6 +38,8 @@ a:hover{
     box-shadow: 2px 2px 2px black;
     margin:10px 0px;
     background:linear-gradient(#d2dae2 , #ffffff) ;
+    position: relative;
+    width:340px;
 
 }
 .block_title{
@@ -69,5 +71,22 @@ input{
 }
 input:hover{
     background-color: white;
-
+}
+.block_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.output_center{
+    margin:10px 0px;
+    display: flex-wrap;
+    background:linear-gradient(#d2dae2 , #ffffff) ;
+    border:2px solid black;
+    box-shadow: 2px 2px 2px black;
+}
+.output_flex{
+    position: relative;
+    margin:0 auto;
+    font-size:30px;
+    width:700px;
+    padding:10px 0px;
 }

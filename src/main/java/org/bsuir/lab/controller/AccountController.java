@@ -34,7 +34,7 @@ public class AccountController {
         return "account";
     }
 
-    TODO("Make this field accepting only ints");
+//    TODO("Make this field accepting only ints");
     @PostMapping("/account/selectById")
     public String selectById(
             @RequestParam int id,
@@ -100,12 +100,12 @@ public class AccountController {
         return "account";
     }
 
-    @PostMapping("/account/delete")
-    public String delete(
-            @RequestParam int id,
-            Map<String, Object> model) {
-        accountRepository.deleteAccountById(id);
-        return "account";
-    }
+//    @PostMapping("/account/delete")
+//    public String delete(
+//            @RequestParam int id,
+//            Map<String, Object> model) {
+//        accountRepository.deleteAccountById(id);
+//        return "account";
+//    }
 
 }
