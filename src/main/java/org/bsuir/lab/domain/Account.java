@@ -23,6 +23,13 @@ public class Account {
         this.role = role;
     }
 
+    public Account(Integer id, String login, String password, String role) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
+
     public Integer getId() {
         return id;
     }
