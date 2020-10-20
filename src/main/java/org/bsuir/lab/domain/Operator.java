@@ -16,10 +16,28 @@ public class Operator {
     public Operator() {
     }
 
+    public Operator(int id) {
+        this.id = id;
+    }
+
     public Operator(String fio, String phoneNumber, Account account) {
         this.fio = fio;
         this.phoneNumber = phoneNumber;
         this.account = account;
+    }
+
+    public Operator(int id, String fio, String phoneNumber, Account account) {
+        this.id = id;
+        this.fio = fio;
+        this.phoneNumber = phoneNumber;
+        this.account = account;
+    }
+
+    @Override
+    public String toString() {
+        return "Operator{" +
+                "id=" + id +
+                '}';
     }
 
     public int getId() {

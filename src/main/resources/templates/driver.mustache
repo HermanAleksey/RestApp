@@ -7,134 +7,142 @@
     <script type="text/javascript" defer src="/styles/main.js"></script>
 </head>
 <body>
+<!--    <a href="greeting">Greeting</a>-->
 <header class="header">
     <div class="menu">
-        <div class="menu_element"><a href="account">Account</a></div>
-        <div class="menu_element"><a href="driver">Driver</a></div>
-        <div class="menu_element"><a href="logcenter">Logistics Center</a></div>
-        <div class="menu_element"><a href="operator">Operator</a></div>
-        <div class="menu_element"><a href="product">Product</a></div>
-        <div class="menu_element"><a href="waybill">Waybill</a></div>
+        <div class="menu_element"><a href="/account">Account</a></div>
+        <div class="menu_element"><a href="/driver">Driver</a></div>
+        <div class="menu_element"><a href="/logcenter">Logistics Center</a></div>
+        <div class="menu_element"><a href="/operator">Operator</a></div>
+        <div class="menu_element"><a href="/product">Product</a></div>
+        <div class="menu_element"><a href="/waybill">Waybill</a></div>
     </div>
     <div class="title">Driver</div>
-    <div class="block">
-        <div class="block_title" id="block_title">
-            Create
-        </div>
-        <div class="block_form" id="block_form">
-            <form method="post" action="/driver/create">
-                <label>
-                    FIO:
-                    <br>
-                    <input name="fio" type="text" requiered placeholder="lesha f o"></input>
-                </label>
-                <br>
-                <label>
-                    PHONE NUMBER:
-                    <br>
-                    <input name="phoneNumber" type="password" requiered placeholder="2917489jkh89347"></input>
-                </label>
-                <div class="ok">
-                    <input type="submit" name="enter" value="CREATE"></input>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="block">
-        <div class="block_title">
-            Read
-        </div>
-        <div class="block_form" id="block_form">
-            <form method="post" action="selectById">
-                <label>
-                    BY ID:
-                    <br>
-                    <input name="id" type="text" requiered placeholder="1"></input>
-                </label>
-                <br>
-                <div class="ok">
-                    <input type="submit" name="enter" value="SEARCH"></input>
-                </div>
-            </form>
-            <form method="post" action="selectByFIO">
-                <label>
-                    BY FIO:
-                    <br>
-                    <input name="fio" type="text" requiered placeholder="lesha"></input>
-                </label>
-                <br>
-                <div class="ok">
-                    <input type="submit" name="enter" value="SEARCH"></input>
-                </div>
-            </form>
-            <form method="post" action="selectByPhoneNumber">
-                <label>
-                    BY PHONE NUMBER:
-                    <br>
-                    <input name="phoneNumber" type="password" requiered placeholder="2917489jkh89347"></input>
-                </label>
-                <br>
-                <div class="ok">
-                    <input type="submit" name="enter" value="SEARCH"></input>
-                </div>
-            </form>
-        </div>
-        <div>
-            {{#drivers}}
-            <div>
-                <b>{{id}}</b>
-                <span>{{fio}}</span>
-                <i>{{phoneNumber}}</i>
+    <div class="block_flex">
+        <div class="block">
+            <div class="block_title" id="block_title">
+                Create
             </div>
-            {{/drivers}}
+            <div class="block_form" id="block_form">
+                <form method="post" action="/driver/create">
+                    <label>
+                        FIO:
+                        <br>
+                        <input name="fio" type="text" required/>
+                    </label>
+                    <br>
+                    <label>
+                        PHONE NUMBER:
+                        <br>
+                        <input name="phoneNumber" type="text" required/>
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="CREATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_title">
+                Read
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/driver/selectById">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/driver/selectByFIO">
+                    <label>
+                        BY FIO:
+                        <br>
+                        <input name="fio" type="text"/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/driver/selectByPhoneNumber">
+                    <label>
+                        BY PHONE NUMBER:
+                        <br>
+                        <input name="phoneNumber" type="text"/>
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_title">
+                Update
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/driver/update">
+                    <label>
+                        ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <label>
+                        FIO:
+                        <br>
+                        <input name="fio" type="text" required/>
+                    </label>
+                    <br>
+                    <label>
+                        PHONE NUMBER:
+                        <br>
+                        <input name="phoneNumber" type="password" required/>
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="UPDATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block_title">
+                Delete
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/driver/delete">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="DELETE"/>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="block">
-        <div class="block_title">
-            Update
+    <div class="output_center">
+        <div class="output_flex">
+            <span class="output_element">id</span>
+            <span class="output_element">fio</span>
+            <span class="output_element">phoneNumber</span>
         </div>
-        <div class="block_form" id="block_form">
-            <form method="post" action="update">
-                <label>
-                    ID:
-                    <br>
-                    <input name="id" type="text" requiered placeholder="1"></input>
-                </label>
-                <br>
-                <label>
-                    FIO:
-                    <br>
-                    <input name="fio" type="text" requiered placeholder="lesha"></input>
-                </label>
-                <br>
-                <label>
-                    PHONE NUMBER:
-                    <br>
-                    <input name="phoneNumber" type="password" requiered placeholder="2917489jkh89347"></input>
-                </label>
-                <div class="ok">
-                    <input type="submit" name="enter" value="UPDATE"></input>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="block">
-        <div class="block_title">
-            Delete
-        </div>
-        <div class="block_form" id="block_form">
-            <form method="post" action="delete">
-                <label>
-                    BY ID:
-                    <br>
-                    <input name="id" type="text" requiered placeholder="1"></input>
-                </label>
-                <br>
-                <div class="ok">
-                    <input type="submit" name="enter" value="DELETE"></input>
-                </div>
-            </form>
-        </div>
+        <br/>
+        {{#drivers}}
+            <div class="output_flex">
+                <span class="output_element">{{id}}</span>
+                <span class="output_element">{{fio}}</span>
+                <span class="output_element">{{phoneNumber}}</span>
+            </div>
+        {{/drivers}}
     </div>
 </header>
 </body>

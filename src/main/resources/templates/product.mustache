@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <script type="text/javascript" defer src="/styles/main.js"></script>
+</head>
+<body>
+<!--    <a href="greeting">Greeting</a>-->
+<header class="header">
+    <div class="menu">
+        <div class="menu_element"><a href="/account">Account</a></div>
+        <div class="menu_element"><a href="/driver">Driver</a></div>
+        <div class="menu_element"><a href="/logcenter">Logistics Center</a></div>
+        <div class="menu_element"><a href="/operator">Operator</a></div>
+        <div class="menu_element"><a href="/product">Product</a></div>
+        <div class="menu_element"><a href="/waybill">Waybill</a></div>
+    </div>
+    <div class="title">Product</div>
+    <!-- ---------------------------------------CREATE------------------------------------------------>
+    <div class="block_flex">
+        <div class="block">
+            <div class="block_title" id="block_title">
+                Create
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/product/create">
+                    <label>
+                        ARTICLE:
+                        <br>
+                        <input name="article" type="text" required/>
+                    </label>
+                    <br>
+                    <label>
+                        TITLE:
+                        <br>
+                        <input name="title" type="text" required />
+                    </label>
+                    <label>
+                        AMOUNT:
+                        <br>
+                        <input name="amount" type="number" required />
+                    </label>
+                    <label>
+                        WAYBILL ID:
+                        <br>
+                        <input name="waybillId" type="number" required />
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="CREATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------READ------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Read
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/product/selectById">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/product/selectByArticle">
+                    <label>
+                        BY ARTICLE:
+                        <br>
+                        <input name="article" type="text" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/product/selectByTitle">
+                    <label>
+                        BY TITLE:
+                        <br>
+                        <input name="title" type="text" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/product/selectByAmount">
+                    <label>
+                        BY AMOUNT:
+                        <br>
+                        <input name="amount" type="number" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/product/selectByWaybillId">
+                    <label>
+                        BY WAYBILL ID:
+                        <br>
+                        <input name="waybillId" type="number" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------UPDATE------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Update
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/product/update">
+                    <label>
+                        ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <label>
+                        ARTICLE:
+                        <br>
+                        <input name="article" type="text" required />
+                    </label>
+                    <label>
+                        TITLE:
+                        <br>
+                        <input name="title" type="text" required />
+                    </label>
+                    <br>
+                    <label>
+                        AMOUNT:
+                        <br>
+                        <input name="amount" type="number" required />
+                    </label>
+                    <label>
+                        WAYBILL ID:
+                        <br>
+                        <input name="waybillId" type="number" required />
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="UPDATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------DELETE------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Delete
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/product/delete">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="DELETE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="output_center">
+        <div class="output_flex">
+            <span class="output_element">id |</span>
+            <span class="output_element">| article |</span>
+            <span class="output_element">| title |</span>
+            <span class="output_element">| amount |</span>
+            <span class="output_element">| waybill</span>
+        </div>
+        <br/>
+        {{#products}}
+            <div class="output_flex">
+                <span class="output_element">{{id}}</span>
+                <span class="output_element">{{article}}</span>
+                <span class="output_element">{{title}}</span>
+                <span class="output_element">{{amount}}</span>
+                <span class="output_element">{{waybill}}</span>
+            </div>
+        {{/products}}
+    </div>
+</header>
+</body>
+</html>

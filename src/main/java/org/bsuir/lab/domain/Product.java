@@ -17,7 +17,19 @@ public class Product {
     public Product() {
     }
 
+    public Product(int id) {
+        this.id = id;
+    }
+
     public Product(String article, String title, int amount, Waybill waybill) {
+        this.article = article;
+        this.title = title;
+        this.amount = amount;
+        this.waybill = waybill;
+    }
+
+    public Product(int id, String article, String title, int amount, Waybill waybill) {
+        this.id = id;
         this.article = article;
         this.title = title;
         this.amount = amount;

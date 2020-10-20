@@ -16,6 +16,10 @@ public class Driver {
     public Driver() {
     }
 
+    public Driver(int id) {
+        this.id = id;
+    }
+
     public Driver(String fio, String phoneNumber) {
         this.fio = fio;
         this.phoneNumber = phoneNumber;
@@ -25,6 +29,13 @@ public class Driver {
         this.id = id;
         this.fio = fio;
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "id=" + id +
+                '}';
     }
 
     public int getId() {

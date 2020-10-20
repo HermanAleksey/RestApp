@@ -34,7 +34,6 @@ public class DriverController {
         return "driver";
     }
 
-    //    TODO("Make this field accepting only ints");
     @PostMapping("/driver/selectById")
     public String selectById(
             @RequestParam int id,
@@ -50,8 +49,11 @@ public class DriverController {
     public String selectByFIO(
             @RequestParam String fio,
             Map<String, Object> model) {
+        Iterable<Driver> drivers = driverRepository.findDriverByFio(fio);
+        model.put("drivers", drivers);
+
         if (fio.isEmpty()) {
-            Iterable<Driver> drivers = driverRepository.findDriverByFio(fio);
+            drivers = driverRepository.findAll();
             model.put("drivers", drivers);
         }
         return "driver";
@@ -61,10 +63,14 @@ public class DriverController {
     public String selectByPassword(
             @RequestParam String phoneNumber,
             Map<String, Object> model) {
+        Iterable<Driver> drivers = driverRepository.findDriverByPhoneNumber(phoneNumber);
+        model.put("drivers", drivers);
+
         if (phoneNumber.isEmpty()) {
-            Iterable<Driver> drivers = driverRepository.findDriverByPhoneNumber(phoneNumber);
+            drivers = driverRepository.findAll();
             model.put("drivers", drivers);
         }
+
         return "driver";
     }
 
@@ -81,11 +87,11 @@ public class DriverController {
         return "driver";
     }
 
-//    @PostMapping("/driver/delete")
-//    public String delete(
-//            @RequestParam int id,
-//            Map<String, Object> model) {
-//        driverRepository.deleteDriverById(id);
-//        return "driver";
-//    }
+    @PostMapping("/driver/delete")
+    public String delete(
+            @RequestParam int id,
+            Map<String, Object> model) {
+        driverRepository.deleteDriverById(id);
+        return "driver";
+    }
 }

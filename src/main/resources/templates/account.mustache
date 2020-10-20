@@ -28,22 +28,22 @@
                     <label>
                         LOGIN:
                         <br>
-                        <input name="login" type="text" requiered placeholder="lesha"></input>
+                        <input name="login" type="text" required />
                     </label>
                     <br>
                     <label>
                         PASSWORD:
                         <br>
-                        <input name="password" type="password" requiered placeholder="2917489jkh89347"></input>
+                        <input name="password" type="password" required />
                     </label>
                     <br>
                     <label>
                         ROLE:
                         <br>
-                        <input name="role" type="text" requiered placeholder="operator"></input>
+                        <input name="role" type="text" required />
                     </label>
                     <div class="ok">
-                        <input type="submit" name="enter" value="CREATE"></input>
+                        <input type="submit" name="enter" value="CREATE"/>
                     </div>
                 </form>
             </div>
@@ -53,47 +53,47 @@
                 Read
             </div>
             <div class="block_form" id="block_form">
-                <form method="post" action="selectById">
+                <form method="post" action="/account/selectById">
                     <label>
                         BY ID:
                         <br>
-                        <input name="id" type="number"></input>
+                        <input name="id" type="number" required/>
                     </label>
                     <br>
                     <div class="ok">
-                        <input type="submit" name="enter" value="SEARCH"></input>
+                        <input type="submit" name="enter" value="SEARCH"/>
                     </div>
                 </form>
-                <form method="post" action="selectByLogin">
+                <form method="post" action="/account/selectByLogin">
                     <label>
                         BY LOGIN:
                         <br>
-                        <input name="login" type="text" requiered placeholder="lesha"></input>
+                        <input name="login" type="text"/>
                     </label>
                     <br>
                     <div class="ok">
-                        <input type="submit" name="enter" value="SEARCH"></input>
+                        <input type="submit" name="enter" value="SEARCH"/>
                     </div>
                 </form>
-                <form method="post" action="selectByPassword">
+                <form method="post" action="/account/selectByPassword">
                     <label>
                         BY PASSWORD:
                         <br>
-                        <input name="password" type="password" requiered placeholder="2917489jkh89347"></input>
+                        <input name="password" type="password" />
                     </label>
                     <br>
                     <div class="ok">
-                        <input type="submit" name="enter" value="SEARCH"></input>
+                        <input type="submit" name="enter" value="SEARCH"/>
                     </div>
                 </form>
-                <form method="post" action="selectByRole">
+                <form method="post" action="/account/selectByRole">
                     <label>
                         BY ROLE:
                         <br>
-                        <input name="role" type="text" requiered placeholder="operator"></input>
+                        <input name="role" type="text" />
                     </label>
                     <div class="ok">
-                        <input type="submit" name="enter" value="SEARCH"></input>
+                        <input type="submit" name="enter" value="SEARCH"/>
                     </div>
                 </form>
             </div>
@@ -104,32 +104,32 @@
                 Update
             </div>
             <div class="block_form" id="block_form">
-                <form method="post" action="update">
+                <form method="post" action="/account/update">
                     <label>
                         ID:
                         <br>
-                        <input name="id" type="number"></input>
+                        <input name="id" type="number" required/>
                     </label>
                     <br>
                     <label>
                         LOGIN:
                         <br>
-                        <input name="login" type="text" requiered placeholder="lesha"></input>
+                        <input name="login" type="text" required />
                     </label>
                     <br>
                     <label>
                         PASSWORD:
                         <br>
-                        <input name="password" type="password" requiered placeholder="2917489jkh89347"></input>
+                        <input name="password" type="password" required />
                     </label>
                     <br>
                     <label>
                         ROLE:
                         <br>
-                        <input name="role" type="text" requiered placeholder="operator"></input>
+                        <input name="role" type="text" required />
                     </label>
                     <div class="ok">
-                        <input type="submit" name="enter" value="UPDATE"></input>
+                        <input type="submit" name="enter" value="UPDATE"/>
                     </div>
                 </form>
             </div>
@@ -139,15 +139,15 @@
                 Delete
             </div>
             <div class="block_form" id="block_form">
-                <form method="post" action="delete">
+                <form method="post" action="/account/delete">
                     <label>
                         BY ID:
                         <br>
-                        <input name="id" type="number"></input>
+                        <input name="id" type="number" required/>
                     </label>
                     <br>
                     <div class="ok">
-                        <input type="submit" name="enter" value="DELETE"></input>
+                        <input type="submit" name="enter" value="DELETE"/>
                     </div>
                 </form>
             </div>

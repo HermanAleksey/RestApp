@@ -19,11 +19,30 @@ public class Waybill {
     public Waybill() {
     }
 
+    public Waybill(int id) {
+        this.id = id;
+    }
+
     public Waybill(String dateOfDelivery, String dateOfShipment, Driver driver, Operator operator) {
         this.dateOfDelivery = dateOfDelivery;
         this.dateOfShipment = dateOfShipment;
         this.driver = driver;
         this.operator = operator;
+    }
+
+    public Waybill(int id, String dateOfDelivery, String dateOfShipment, Driver driver, Operator operator) {
+        this.id = id;
+        this.dateOfDelivery = dateOfDelivery;
+        this.dateOfShipment = dateOfShipment;
+        this.driver = driver;
+        this.operator = operator;
+    }
+
+    @Override
+    public String toString() {
+        return "Waybill{" +
+                "id=" + id +
+                '}';
     }
 
     public int getId() {

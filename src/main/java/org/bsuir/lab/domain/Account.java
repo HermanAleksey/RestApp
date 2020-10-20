@@ -17,6 +17,10 @@ public class Account {
     public Account() {
     }
 
+    public Account(Integer id) {
+        this.id = id;
+    }
+
     public Account(String login, String password, String role) {
         this.login = login;
         this.password = password;
@@ -56,5 +60,12 @@ public class Account {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                '}';
     }
 }

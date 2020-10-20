@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <script type="text/javascript" defer src="/styles/main.js"></script>
+</head>
+<body>
+<!--    <a href="greeting">Greeting</a>-->
+<header class="header">
+    <div class="menu">
+        <div class="menu_element"><a href="/account">Account</a></div>
+        <div class="menu_element"><a href="/driver">Driver</a></div>
+        <div class="menu_element"><a href="/logcenter">Logistics Center</a></div>
+        <div class="menu_element"><a href="/operator">Operator</a></div>
+        <div class="menu_element"><a href="/product">Product</a></div>
+        <div class="menu_element"><a href="/waybill">Waybill</a></div>
+    </div>
+    <div class="title">Logistics Center</div>
+<!-- ---------------------------------------CREATE------------------------------------------------>
+    <div class="block_flex">
+        <div class="block">
+            <div class="block_title" id="block_title">
+                Create
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/logcenter/create">
+                    <label>
+                        LOCATION:
+                        <br>
+                        <input name="location" type="text" required/>
+                    </label>
+                    <br>
+                    <label>
+                        NAME:
+                        <br>
+                        <input name="name" type="text" required />
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="CREATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------READ------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Read
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/logcenter/selectById">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/logcenter/selectByLocation">
+                    <label>
+                        BY LOCATION:
+                        <br>
+                        <input name="location" type="text" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/logcenter/selectByName">
+                    <label>
+                        BY NAME:
+                        <br>
+                        <input name="name" type="password" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------UPDATE------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Update
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/logcenter/update">
+                    <label>
+                        ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <label>
+                        LOCATION:
+                        <br>
+                        <input name="location" type="text" required />
+                    </label>
+                    <br>
+                    <label>
+                        NAME:
+                        <br>
+                        <input name="name" type="text" required />
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="UPDATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------DELETE------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Delete
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/logcenter/delete">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="DELETE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="output_center">
+        <div class="output_flex">
+            <span class="output_element">id</span>
+            <span class="output_element">location</span>
+            <span class="output_element">password</span>
+        </div>
+        <br/>
+        {{#logcenters}}
+            <div class="output_flex">
+                <span class="output_element">{{id}}</span>
+                <span class="output_element">{{location}}</span>
+                <span class="output_element">{{name}}</span>
+            </div>
+        {{/logcenters}}
+    </div>
+</header>
+</body>
+</html>

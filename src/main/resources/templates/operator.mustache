@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+    <script type="text/javascript" defer src="/styles/main.js"></script>
+</head>
+<body>
+<!--    <a href="greeting">Greeting</a>-->
+<header class="header">
+    <div class="menu">
+        <div class="menu_element"><a href="/account">Account</a></div>
+        <div class="menu_element"><a href="/driver">Driver</a></div>
+        <div class="menu_element"><a href="/logcenter">Logistics Center</a></div>
+        <div class="menu_element"><a href="/operator">Operator</a></div>
+        <div class="menu_element"><a href="/product">Product</a></div>
+        <div class="menu_element"><a href="/waybill">Waybill</a></div>
+    </div>
+    <div class="title">Operator</div>
+    <!-- ---------------------------------------CREATE------------------------------------------------>
+    <div class="block_flex">
+        <div class="block">
+            <div class="block_title" id="block_title">
+                Create
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/operator/create">
+                    <label>
+                        FIO:
+                        <br>
+                        <input name="fio" type="text" required/>
+                    </label>
+                    <br>
+                    <label>
+                        PHONE NUMBER:
+                        <br>
+                        <input name="phoneNumber" type="text" required />
+                    </label>
+                    <label>
+                        ACCOUNT ID:
+                        <br>
+                        <input name="accountId" type="number" required />
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="CREATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------READ------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Read
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/operator/selectById">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/operator/selectByFio">
+                    <label>
+                        BY FIO:
+                        <br>
+                        <input name="fio" type="text" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/operator/selectByPhoneNumber">
+                    <label>
+                        BY PHONE NUMBER:
+                        <br>
+                        <input name="phoneNumber" type="text" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+                <form method="post" action="/operator/selectByAccountId">
+                    <label>
+                        BY ACCOUNT ID:
+                        <br>
+                        <input name="accountId" type="number" />
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="SEARCH"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------UPDATE------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Update
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/operator/update">
+                    <label>
+                        ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <label>
+                        FIO:
+                        <br>
+                        <input name="fio" type="text" required />
+                    </label>
+                    <br>
+                    <label>
+                        PHONE NUMBER:
+                        <br>
+                        <input name="phoneNumber" type="text" required />
+                    </label>
+                    <label>
+                        ACCOUNT ID:
+                        <br>
+                        <input name="accountId" type="number" required />
+                    </label>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="UPDATE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ---------------------------------------DELETE------------------------------------------------>
+        <div class="block">
+            <div class="block_title">
+                Delete
+            </div>
+            <div class="block_form" id="block_form">
+                <form method="post" action="/operator/delete">
+                    <label>
+                        BY ID:
+                        <br>
+                        <input name="id" type="number" required/>
+                    </label>
+                    <br>
+                    <div class="ok">
+                        <input type="submit" name="enter" value="DELETE"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="output_center">
+        <div class="output_flex">
+            <span class="output_element">id</span>
+            <span class="output_element">fio</span>
+            <span class="output_element">phoneNumber</span>
+            <span class="output_element">accountId</span>
+        </div>
+        <br/>
+        {{#operators}}
+            <div class="output_flex">
+                <span class="output_element">{{id}}</span>
+                <span class="output_element">{{fio}}</span>
+                <span class="output_element">{{phoneNumber}}</span>
+                <span class="output_element">{{account}}</span>
+            </div>
+        {{/operators}}
+    </div>
+</header>
+</body>
+</html>

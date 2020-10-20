@@ -38,9 +38,6 @@ public class AccountController {
     public String selectById(
             @RequestParam int id,
             Map<String, Object> model) {
-//        if (idString.isEmpty()) return "account";
-        System.out.println("-------------------------"+id);
-//        int id = Integer.parseInt(idString);
         Iterable<Account> accounts = accountRepository.findAccountById(id);
         model.put("accounts", accounts);
 
