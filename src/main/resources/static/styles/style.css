@@ -85,8 +85,15 @@ input:hover{
 }
 .output_flex{
     position: relative;
+    display:flex;
+    justify-content: center;
     margin:0 auto;
     font-size:30px;
-    width:700px;
+    width:900px;
     padding:10px 0px;
+}
+.output_element{
+    postion:relative;
+    padding:5px;
+    border:1px solid black;
 }

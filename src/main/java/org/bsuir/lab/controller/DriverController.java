@@ -19,6 +19,8 @@ public class DriverController {
 
     @GetMapping("/driver")
     public String greeting(Map<String, Object> model) {
+        Iterable<Driver> drivers = driverRepository.findAll();
+        model.put("drivers",drivers );
         return "driver";
     }
 

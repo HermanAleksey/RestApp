@@ -18,5 +18,4 @@ public interface AccountRepository  extends CrudRepository<Account, Long> {
 
     @Transactional
     List<Account> deleteAccountById (int id);
-
 }
